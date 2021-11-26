@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Get list", "Index", "Employee1")</li>
+        <li>@Html.ActionLink("Create", "Create", "Employee1")</li>
+        @if (User.Identity.IsAuthenticated)
+        {
+                <li><a>Dear-@User.Identity.Name</a> </li>
+                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+        }
+            else
+            {
+            <li>@Html.ActionLink("Login","Login","Account")</li>
+            }
+        
+        
+        
+        
+    </ul>
+</div>
+    }
